@@ -78,7 +78,7 @@ elif [[ ${UPLOAD_TYPE} == 2 ]]; then
    	#fir
    	echo "begin upload to fir..."
 else
-	echo "upload by hand..."
+	echo "upload by hand!"
 fi
 
 # delete ARCHIVEPATH file
