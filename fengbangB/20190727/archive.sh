@@ -16,7 +16,7 @@ IS_WORKSPACE="true"
 
 # 定义路径
 WORKSPACE=${SCHEMENAME}.xcworkspace
-DATE=`date +%Y%m%d%H%M`
+DATE=`date +%Y%m%d%H%M%S`
 CACHEPATH=~/Desktop/derivedData
 ARCHIVEPATH=~/Desktop/derivedData/${SCHEMENAME}.xcarchive
 IPAPATH=~/Desktop
