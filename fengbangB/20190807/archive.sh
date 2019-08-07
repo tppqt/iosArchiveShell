@@ -60,7 +60,7 @@ if [ -e $IPAPATH/$IPANAME ]; then
 	echo "***-----------------------------***"
 	echo " build successful! Configurations!"
 	echo "***-----------------------------***"
-	git status
+	# git status
 else
 	echo "***-----------------------------***"
 	echo "     error:create IPA failed!"
@@ -70,16 +70,20 @@ fi
 # 判断上传方式
 if [ ${UPLOAD_TYPE} == 1 ]; then
 	#蒲公英
+	echo -e "\n"
 	echo "begin upload to pgyer..."
 	echo -e "\n"
     curl -F "file=@${IPAPATH}/${IPANAME}/${SCHEMENAME}.ipa" -F "uKey=${MY_PGY_UK}" -F "_api_key=${MY_PGY_API_K}" https://qiniu-storage.pgyer.com/apiv1/app/upload
     echo -e "\n"
     echo "upload successful!"
+	echo -e "\n"
 elif [[ ${UPLOAD_TYPE} == 2 ]]; then
    	#fir
+	echo -e "\n"
    	echo "begin upload to fir..."
    	echo -e "\n"
 else
+	echo -e "\n"
 	echo "upload by hand!"
 	echo -e "\n"
 fi
