@@ -5,7 +5,7 @@
 
 # 定义一些通用参数（根据配置修改）
 # scheme name, 可以用xcodebuild -list命令查看schemename
-SCHEMENAME="FengbangB"
+SCHEMENAME="edianzu"
 # Debug 或者 Release
 MODE=''
 # method，打包的方式。方式分别为 development, ad-hoc, app-store, enterprise 。必填
@@ -15,11 +15,11 @@ IS_WORKSPACE=""
 
 
 # 上传方式：0不上传；1：蒲公英；2：fir；
-UPLOAD_TYPE=
+UPLOAD_TYPE=0
 #蒲公英apiKey
-MY_PGY_API_K="652ed9b22548860042836f8129474dc9"
+MY_PGY_API_K=""
 #蒲公英userKey
-MY_PGY_UK="68254eed28f1286cb113b7b6e25b159e"
+MY_PGY_UK=""
 
 
 # 定义路径

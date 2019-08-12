@@ -5,8 +5,8 @@
 # 定义变量
 MODE=""
 METHOD=""
-IS_WORKSPACE=false
-UPLOAD_TYPE=0
+IS_WORKSPACE=""
+UPLOAD_TYPE=
 
 
 # 输入打包模式，debug:0, release:1 （输出颜色配置：https://www.cnblogs.com/-beyond/p/8242820.html）
@@ -50,18 +50,23 @@ echo -e "\033[32;40m 当前选择的打包方式为：${METHOD} \033[0m"
 
 # 是否编译工作空间(例:若是用Cocopods管理的.xcworkspace项目,赋值true;用Xcode默认创建的.xcodeproj,赋值false)
 echo -e "\n" # .xcworkspace
-files=$(ls *.xcworkspace 2> /dev/null | wc -l) # 判断目录下是否存在已知后缀名文件
-if [ $files -ne 0 ] ; then #判断某扩展名文件是否存在 if ls *.xcworkspace >/dev/null 2>&1; then 
-	IS_WORKSPACE=true
-else
-	IS_WORKSPACE=false
+if [[ -z $IS_WORKSPACE ]]; then
+	echo -e "\033[33;40m 判断某扩展名文件是否存在 \033[0m"
+	files=$(ls *.xcworkspace 2> /dev/null | wc -l) # 判断目录下是否存在已知后缀名文件
+	if [ $files -ne 0 ] ; then #判断某扩展名文件是否存在 if ls *.xcworkspace >/dev/null 2>&1; then 
+		IS_WORKSPACE=true
+	else
+		IS_WORKSPACE=false
+	fi
 fi
 echo -e "\033[32;40m 当前目录是否包含.xcworkspace：${IS_WORKSPACE} \033[0m"
 
 
 # 是否上传
 echo -e "\n"
-echo -e "\033[33;40m 请输入上传方式：0不上传；1：蒲公英；2：fir \033[0m"
-read UPLOAD_TYPE
-echo -e "\033[32;40m 选择的上传渠道为：${UPLOAD_TYPE} \033[0m"
+while [[ -z $UPLOAD_TYPE ]]; do
+	echo -e "\033[33;40m 请输入上传方式：0不上传；1：蒲公英；2：fir \033[0m"
+	read UPLOAD_TYPE
+done
+echo -e "\033[32;40m 选择的上传渠道为(0不上传；1：蒲公英；2：fir)：${UPLOAD_TYPE} \033[0m"
 
