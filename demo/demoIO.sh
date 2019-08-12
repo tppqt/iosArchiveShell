@@ -6,6 +6,8 @@
 MODE=""
 METHOD=""
 IS_WORKSPACE=false
+UPLOAD_TYPE=0
+
 
 # 输入打包模式，debug:0, release:1 （输出颜色配置：https://www.cnblogs.com/-beyond/p/8242820.html）
 while [[ -z $MODE ]]; do
@@ -54,5 +56,12 @@ if [ $files -ne 0 ] ; then #判断某扩展名文件是否存在 if ls *.xcworks
 else
 	IS_WORKSPACE=false
 fi
-echo -e "\033[32;40m 是否包含.xcworkspace：${IS_WORKSPACE} \033[0m"
+echo -e "\033[32;40m 当前目录是否包含.xcworkspace：${IS_WORKSPACE} \033[0m"
+
+
+# 是否上传
 echo -e "\n"
+echo -e "\033[33;40m 请输入上传方式：0不上传；1：蒲公英；2：fir \033[0m"
+read UPLOAD_TYPE
+echo -e "\033[32;40m 选择的上传渠道为：${UPLOAD_TYPE} \033[0m"
+
