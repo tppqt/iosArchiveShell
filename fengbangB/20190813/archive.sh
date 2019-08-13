@@ -11,7 +11,7 @@ MODE=''
 # method，打包的方式。方式分别为 development, ad-hoc, app-store, enterprise 。必填
 METHOD=""
 # 是否编译工作空间(例:若是用Cocopods管理的.xcworkspace项目,赋值true;用Xcode默认创建的.xcodeproj,赋值false)
-IS_WORKSPACE=""
+IS_WORKSPACE="true"
 
 
 # 上传方式：0不上传；1：蒲公英；2：fir；
