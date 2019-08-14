@@ -65,8 +65,8 @@ echo -e "\033[32;40m 当前目录是否包含.xcworkspace：${IS_WORKSPACE} \033
 # 是否上传
 echo -e "\n"
 while [[ -z $UPLOAD_TYPE ]]; do
-	echo -e "\033[33;40m 请输入上传方式：0不上传；1：蒲公英；2：fir \033[0m"
+	echo -e "\033[33;40m 请输入上传方式：0：不上传；1：蒲公英；2：fir \033[0m"
 	read UPLOAD_TYPE
 done
-echo -e "\033[32;40m 选择的上传渠道为(0不上传；1：蒲公英；2：fir)：${UPLOAD_TYPE} \033[0m"
+echo -e "\033[32;40m 选择的上传渠道为(0：不上传；1：蒲公英；2：fir)：${UPLOAD_TYPE} \033[0m"
 
