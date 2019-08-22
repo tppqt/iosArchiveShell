@@ -1,0 +1,51 @@
+#!/bin/bash
+# author wangyingbo
+
+set -e
+
+usage() {
+	cat <<EOF
+	usage:$0 -a [-b paraB] [-c paraC]
+	opt:
+		-a help info
+		-b parameter b
+		-c parameter c
+EOF
+}
+
+
+# https://blog.csdn.net/zongshi1992/article/details/71693045
+# < :输入重定向
+# > :输出重定向
+# >> :输出重定向,进行追加,不会覆盖之前内容
+# << :标准输入来自命令行的一对分隔号的中间内容.
+
+
+# https://blog.csdn.net/xluren/article/details/17489667
+while getopts "ab:c:v" opt; do
+	case $opt in
+		a)
+			usage
+			exit 0
+			;;
+		b)
+			echo -e "选项b的参数是${OPTARG}"
+			;;
+		c)
+			echo -e "选项c的参数是${OPTARG}"
+			;;
+		v)
+			echo -e "version:1.0"
+			;;
+		\?)
+			usage
+			;;
+
+	esac
+done
+
+
+# https://www.jianshu.com/p/5de2286b2e97
+# https://www.jb51.net/article/124538.htm
+install -c $0 /usr/local/bin
+
