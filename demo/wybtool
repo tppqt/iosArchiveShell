@@ -10,6 +10,7 @@ usage() {
 		-a help info
 		-b parameter b
 		-c parameter c
+		-v version info
 EOF
 }
 
