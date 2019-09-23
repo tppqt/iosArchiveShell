@@ -21,7 +21,7 @@ EOF
 	return $para
 }
 
-isExitFir
+res1=$(isExitFir)
 res2=`echo $?`
 
 if [[ $res2 -eq 0 ]]; then
