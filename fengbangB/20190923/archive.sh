@@ -138,6 +138,25 @@ else
 	exit 0
 fi
 
+
+# fir-cli is exit
+isExitFir() {
+	para=0
+	files=$(command -v fir)
+	if [ $files ] ; then
+		para=1
+	else
+		echo -e "\033[31;40m warning: 请先安装fir命令!!! \033[0m"
+		cat <<EOF
+		请先安装fir命令:
+			sudo gem install fir-cli
+			或
+			sudo gem install -n /usr/local/bin fir-cli
+EOF
+	fi
+	return $para
+}
+
 # 判断上传方式
 if [ ${UPLOAD_TYPE} == 1 ]; then
 	#蒲公英
@@ -170,6 +189,7 @@ elif [[ ${UPLOAD_TYPE} == 2 ]]; then
 		exit 0
 	else
 		echo -e "\033[33;40m 正在使用fir上传... \033[0m"
+   		echo -e "\n"
 		if [[ -z $FIR_TOKEN ]]; then
 			echo -e "\033[31;40m	error:fir token is null!!     \033[0m"
 			exit 0
@@ -185,25 +205,6 @@ else
 	echo -e "\033[32;40m	please upload by hand!    \033[0m"
 	echo -e "\n"
 fi
-
-
-# fir-cli is exit
-isExitFir() {
-	para=0
-	files=$(command -v fir)
-	if [ $files ] ; then
-		para=1
-	else
-		echo -e "\033[31;40m warning: 请先安装fir命令!!! \033[0m"
-		cat <<EOF
-		请先安装fir命令:
-			sudo gem install fir-cli
-			或
-			sudo gem install -n /usr/local/bin fir-cli
-EOF
-	fi
-	return $para
-}
 
 
 # delete ARCHIVEPATH file
