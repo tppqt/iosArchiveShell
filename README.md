@@ -6,6 +6,9 @@
 		chmod +x archive.sh
 		./archive.sh
 
+**运行效果**
+
+![screen_shot](https://raw.githubusercontent.com/wangyingbo/iosArchiveShell/master/sources/sh_screen_shot.png?token=ADBGXVONZJAUMMGNWQIPIPS5RGDZQ)
 
 **如果脚本里的配置项`MODE`、`METHOD`、`IS_WORKSPACE`、`UPLOAD_TYPE`字段都设置了默认值，则直接运行；如果个别字段没有默认值，则会分别提示输入相应的值，然后根据输入的值选择打包模式运行；**
 
