@@ -21,7 +21,7 @@
 > + UPLOAD_TYPE：上传方式的值，可以设置默认值为：0：不上传；1：蒲公英；2：fir；如果不设置留空的话，则运行脚本的时候会提示选择输入；
 > + MY_PGY_API_K：如果选择上传渠道为蒲公英，必传；[蒲公英接口文档获取_api_key和uKey](https://www.pgyer.com/doc/api#uploadApp)；
 > + MY_PGY_UK：如果选择上传渠道为蒲公英，必传；
-> + FIR_TOKEN：如果选择上传渠道为fir，必传；[fir地址](https://fir.im/apps);
+> + FIR_TOKEN：如果选择上传渠道为fir，必传；[firtoken](https://fir.im/docs)；[fir地址](https://fir.im/apps);
 
 *一些默认的路径参数配置：*
 > + DATE：生成的文件夹的名称拼接的时间格式；
