@@ -140,7 +140,7 @@ fi
 
 
 # fir-cli is exit
-isExitFir() {
+isExistFir() {
 	para=0
 	files=$(command -v fir)
 	if [ $files ] ; then
@@ -181,7 +181,7 @@ elif [[ ${UPLOAD_TYPE} == 2 ]]; then
 	echo -e "\033[33;40m begin upload to fir... \033[0m"
    	echo -e "\n"
 
-   	isExitFir
+   	isExistFir
 	res2=`echo $?`
 	# 校验是否安装fir-cli命令
 	if [[ $res2 -eq 0 ]]; then
