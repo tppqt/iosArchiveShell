@@ -139,7 +139,7 @@ else
 fi
 
 
-# fir-cli is exit
+# fir-cli is exist
 isExistFir() {
 	para=0
 	files=$(command -v fir)
