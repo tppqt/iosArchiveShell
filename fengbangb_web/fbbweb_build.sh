@@ -35,7 +35,7 @@ deleteCacheFiles(){
 
 	rm -rf ${APP_NAME}
 	rm -rf ${APP_NAME}.zip
-	if [ ! -d "fengbangb_web" ] ; then 
+	if [ ! -d ${APP_NAME} ] ; then 
 		echo -e "\033[32;40m ***-------------删除缓存文件夹成功----------------*** \033[0m"
 		para=1
 	else
