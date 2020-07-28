@@ -66,8 +66,10 @@ UPDATE_INCREASE=`echo $?`
 echo "最终的自增数字是：${resIncrease}"
 
 
-uuid=`uuidgen`
-echo "生成的uuid是：${uuid}"
+olduuid=`uuidgen`
+echo "生成的uuid是：${olduuid}"
+uuid=$(echo $olduuid | tr -d "-")
+echo "最后的uuid是：${uuid}"
 
 
 result="insert into fbappsvr.sys_apk_config (APK_ID, VERSION_CODE, DOWNLOAD_LINK, UPDATE_DESC, GRADE, IS_FORCE_UPDATE, CREATER, CREATE_TM, APP_FLAG, APP_PLAT, IS_POP, MD5)
