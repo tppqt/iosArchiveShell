@@ -78,6 +78,8 @@ values ('${uuid}', '${VERSION}', '${UPDATE_URL}', '${DESCRIPTION}', ${UPDATE_INC
 
 echo -e "\n"
 echo -e "\033[32;40m ${result}  \033[0m"
+echo $result | pbcopy
+
 
 echo -e "\n"
 echo -e "\033[32;40m this shell script execution duration(脚本执行时长): ${SECONDS}s  \033[0m"
