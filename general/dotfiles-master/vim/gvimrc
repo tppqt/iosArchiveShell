@@ -1,0 +1,11 @@
+if has("gui_macvim")
+  set guifont=InputMono_Light:h13
+elseif has("gui_gtk2")
+  set guifont=Liberation\ Mono\ 11
+end
+
+" Map home and end keys to the correct things
+noremap <Home> gg
+noremap <End>  G
+noremap <PageUp> <C-b>
+noremap <PageDown> <C-f>

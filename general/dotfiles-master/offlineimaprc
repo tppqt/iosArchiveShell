@@ -1,0 +1,59 @@
+[general]
+ui         = ttyui
+accounts   = gmail, lyft
+pythonfile = ~/.mutt/offlineimaphelpers.py
+fsync      = False
+
+[mbnames]
+enabled = yes
+filename = ~/.mutt/temp/mailboxes
+header = "mailboxes "
+peritem = "+%(accountname)s/%(foldername)s"
+sep = " "
+footer = "\n"
+
+[Account gmail]
+localrepository  = gmail-local
+remoterepository = gmail-remote
+postsynchook     = mu index --maildir=~/.mail
+
+[Repository gmail-local]
+type = Maildir
+localfolders = ~/.mail/keithbsmiley-gmail.com
+nametrans = local_nametrans_gmail
+folderfilter = folder_filter
+
+[Repository gmail-remote]
+maxconnections = 1
+type = Gmail
+remoteuser = keithbsmiley@gmail.com
+remotepasseval = get_keychain_pass(account="keithbsmiley@gmail.com",
+                                   server ="imap.gmail.com")
+realdelete = no
+sslcacertfile = ~/.mutt/cacert.pem
+nametrans = remote_nametrans_gmail
+folderfilter = folder_filter
+createfolders = False
+
+[Account lyft]
+localrepository  = lyft-local
+remoterepository = lyft-remote
+postsynchook     = mu index --maildir=~/.mail
+
+[Repository lyft-local]
+type = Maildir
+localfolders = ~/.mail/keith-lyft.com
+nametrans = local_nametrans_gmail
+folderfilter = folder_filter
+
+[Repository lyft-remote]
+maxconnections = 1
+type = Gmail
+remoteuser = ksmiley@lyft.com
+remotepasseval = get_keychain_pass(account="ksmiley@lyft.com",
+                                   server ="imap.gmail.com")
+realdelete = no
+sslcacertfile = ~/.mutt/cacert.pem
+nametrans = remote_nametrans_gmail
+folderfilter = folder_filter
+createfolders = False

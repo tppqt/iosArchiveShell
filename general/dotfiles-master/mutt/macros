@@ -1,0 +1,36 @@
+macro index .n "<tag-pattern>~N<enter><tag-prefix><clear-flag>N<clear-flag>*" "Catchup all new messages"
+macro pager <tab> "<exit><sync-mailbox>" "Sync mailbox"
+
+# Easy switching between account inboxes
+macro index,pager gt "<change-folder>+keith-lyft.com/INBOX<enter>" "Go to lyft inbox"
+macro index,pager gk "<change-folder>+keithbsmiley-gmail.com/INBOX<enter>" "Go to gmail inbox"
+
+# ghu, the second alias opens the URL for mailchimp like URLs that require a
+# redirect in order to actually unsubscribe you.
+macro pager ,u \
+  "<enter-command>set my_old_pipe_decode=\$pipe_decode nopipe_decode<enter> \
+  <pipe-message>/usr/local/bin/ghu<enter> \
+  <enter-command>set pipe_decode=\$my_old_pipe_decode<enter>" \
+  "Unsubscribe from any email with a List-Unsubscribe header"
+
+macro pager ,o \
+  "<enter-command>set my_old_pipe_decode=\$pipe_decode nopipe_decode<enter> \
+  <pipe-message>/usr/local/bin/ghu --open<enter> \
+  <enter-command>set pipe_decode=\$my_old_pipe_decode<enter>" \
+  "Unsubscribe from any email with a List-Unsubscribe header"
+
+macro pager ,a \
+  "<enter-command>set my_old_pipe_decode=\$pipe_decode nopipe_decode<enter> \
+  <pipe-message>$DOTFILES/mutt/listarchive.sh<enter> \
+  <enter-command>set pipe_decode=\$my_old_pipe_decode<enter> \
+  <top>" \
+  "Open the archive for a mailing list"
+
+macro pager ,b \
+  "<enter-command>set my_old_pipe_decode=\$pipe_decode nopipe_decode<enter> \
+  <pipe-message>$DOTFILES/mutt/swiftbugs.sh<enter> \
+  <enter-command>set pipe_decode=\$my_old_pipe_decode<enter> \
+  <top>" \
+  "Open all Swift bugs links (or numbers) in urlview"
+
+# vim: ft=muttrc

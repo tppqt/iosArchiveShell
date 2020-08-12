@@ -1,0 +1,12 @@
+*.pem
+.tags
+bower_components
+build.noindex
+coverage
+doc
+log
+node_modules
+tags
+temp
+tmp
+vendor

@@ -1,0 +1,45 @@
+auto-reload yes
+reload-time 30
+notify-beep yes
+reload-threads 20
+
+error-log "~/.newsboat-error.log"
+
+# Hide read stuff
+show-read-feeds no
+show-read-articles no
+mark-as-read-on-hover no
+
+# vim-like keys
+bind-key j down
+bind-key k up
+bind-key ^D pagedown
+bind-key ^U pageup
+unbind-key g
+unbind-key G
+
+# Sorting feeds and articles
+feed-sort-order unreadarticlecount-asc
+article-sort-order date-asc
+
+# Display format for feeds and articles
+feedlist-format "%n %8u    %t"
+articlelist-format "%f %D    %t"
+
+# Mutt like URLView
+bind-key ENTER show-urls article
+external-url-viewer "urlview"
+
+# Browser for opening URLs, same as mutt
+browser "~/.mutt/urlhandler.sh %u"
+
+# feedhq as a sync engine
+urls-source "feedhq"
+feedhq-show-special-feeds "no"
+feedhq-login "keithbsmiley@gmail.com"
+feedhq-passwordfile "~/.feedhqpassword"
+
+# Include colors per theme
+include ~/.config/newsboat/parsec.conf
+
+# vim:ft=conf
