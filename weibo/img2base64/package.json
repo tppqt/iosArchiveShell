@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "chalk": "^4.1.0",
+    "commander": "^7.2.0",
+    "mime-types": "^2.1.30",
+    "mkdirp": "^1.0.4"
+  }
+}
