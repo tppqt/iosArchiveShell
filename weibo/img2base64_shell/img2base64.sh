@@ -1,6 +1,6 @@
 #!/bin/bash
 # author wangyingbo
-# date:2021-04-08 11:30
+# date:2021-04-08 下午 11:30
 
 FORMATTER='txt'
 SUFFIX=.${FORMATTER}
