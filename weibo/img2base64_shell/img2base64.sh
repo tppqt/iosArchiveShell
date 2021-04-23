@@ -65,6 +65,7 @@ base64Func() {
 base64Func $1
 
 # shell excute time
+echo ""
 echo -e "\033[33;40m  ($0) ${TIME}: this shell script execution duration: ${SECONDS}s  \033[0m"
 echo ""
 
