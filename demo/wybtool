@@ -50,3 +50,10 @@ done
 # https://www.jb51.net/article/124538.htm
 install -c $0 /usr/local/bin
 
+
+
+# 一键安装例子：https://github.com/guarinogabriel/Mac-CLI
+# 一键安装Mac工具 Via curl
+# sh -c "$(curl -fsSL https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install)"
+# 一键安装Mac工具 Via wget
+# sh -c "$(wget https://raw.githubusercontent.com/guarinogabriel/mac-cli/master/mac-cli/tools/install -O -)"
